@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: 0;
+    min-height: 100vh;
+    background: url(background.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1.5s;
+    font-size: 3em;
+}
+
+h1:hover {
+    color: #308ed6;
+    font-size: 3.3em;
+}
+
+.block {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100px;
+    width: 65%;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(20px);
+    background-color: transparent;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block a {
+    position: relative;
+    font-size: 1.8em;
+    color: #162938;
+    text-decoration: none;
+    font-weight: 1000;
+    margin: 125px;
+    transition: 1s ease;
+}
+
+.block a:hover {
+    color: #162938;
+    font-size: 2em;
+    font-weight: 1200;
+    transition: 1s;
+}
+
+/* Utilizado para selecionar e estilizar o conteúdo que é gerado automaticamente e inserido após o conteúdo do elemento alvo */
+.block a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background: #162938;
+    border-radius: 5px;
+    bottom: -6px;
+    height: 3px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .5s;
+}
+
+/*Aplica ao focar e depois de after no elemento blockprojects*/
+.block a:hover::after {
+    transform-origin: right;
+    transform: scaleX(1);
+}
+
+.result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 65%;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    background-color: transparent;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+}
